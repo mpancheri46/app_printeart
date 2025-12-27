@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printeart • Nuevo Trabajo</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/trabajos.css" />
+  <link rel="stylesheet" href="../css/nuevo_trabajo.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-title">Printeart</div>
+        <div class="brand-sub">v1.0.0</div>
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item" href="./index.html">Inicio</a>
+        <a class="menu-item is-active" href="./trabajos.html">Trabajos</a>
+        <a class="menu-item" href="./materiales.html">Materiales</a>
+        <a class="menu-item" href="./historial.html">Historial</a>
+        <a class="menu-item" href="./usuarios.html">Usuarios</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="userbox">
+          <div class="user-name">Administrador</div>
+          <div class="user-role">Admin</div>
+        </div>
+
+        <button class="button is-fullwidth btn-logout">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      
+      <!-- Modal/Formulario Nuevo Trabajo -->
+      <div class="modal-trabajo-page">
+        <div class="modal-trabajo-content">
+          <div class="modal-trabajo-header">
+            <h2 class="modal-trabajo-title">Nuevo Trabajo</h2>
+            <a href="./trabajos.html" class="modal-trabajo-close" aria-label="Volver">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </a>
+          </div>
+
+          <form class="modal-trabajo-form" id="formNuevoTrabajo">
+            <!-- Fila 1: Cliente y Contacto -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Cliente *</label>
+                <input type="text" class="form-input" name="cliente" placeholder="Nombre del cliente" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Contacto *</label>
+                <input type="text" class="form-input" name="contacto" placeholder="Teléfono o email" required />
+              </div>
+            </div>
+
+            <!-- Fila 2: Tipo de Trabajo y Material -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Tipo de Trabajo *</label>
+                <select class="form-select" name="tipo" required>
+                  <option value="">Seleccionar tipo</option>
+                  <option value="impresion">Impresión Digital</option>
+                  <option value="vinilo">Vinilo</option>
+                  <option value="corte">Impresión + Corte</option>
+                  <option value="sublimacion">Sublimación</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Material *</label>
+                <select class="form-select" name="material" required>
+                  <option value="">Seleccionar material</option>
+                  <option value="papel">Papel</option>
+                  <option value="vinilo">Vinilo</option>
+                  <option value="lona">Lona</option>
+                  <option value="tela">Tela</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Máquinas Requeridas -->
+            <div class="form-group">
+              <label class="form-label">Máquinas Requeridas *</label>
+              <div class="maquinas-grid">
+                <button type="button" class="maquina-btn" data-maquina="xerox-c70">Xerox C70</button>
+                <button type="button" class="maquina-btn" data-maquina="roland-sg540">Roland SG-540</button>
+                <button type="button" class="maquina-btn" data-maquina="plotter-roland">Plotter Roland</button>
+                <button type="button" class="maquina-btn" data-maquina="maquina-laser">Máquina Láser</button>
+                <button type="button" class="maquina-btn" data-maquina="prensa-termica">Prensa Térmica</button>
+              </div>
+              <input type="hidden" name="maquinas" id="maquinasSelected" required />
+            </div>
+
+            <!-- Fila 3: Dimensiones y Cantidad -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Dimensiones *</label>
+                <input type="text" class="form-input" name="dimensiones" placeholder="Ej: 30x40 cm" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Cantidad *</label>
+                <input type="number" class="form-input" name="cantidad" placeholder="1" min="1" value="1" required />
+              </div>
+            </div>
+
+            <!-- Fila 4: Fechas -->
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Fecha de Ingreso *</label>
+                <input type="date" class="form-input" name="fechaIngreso" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Fecha de Entrega *</label>
+                <input type="date" class="form-input" name="fechaEntrega" required />
+              </div>
+            </div>
+
+            <!-- Prioridad -->
+            <div class="form-group">
+              <label class="form-label">Prioridad</label>
+              <select class="form-select" name="prioridad">
+                <option value="normal">Normal</option>
+                <option value="urgente">Urgente</option>
+                <option value="baja">Baja</option>
+              </select>
+            </div>
+
+            <!-- Notas -->
+            <div class="form-group">
+              <label class="form-label">Notas</label>
+              <textarea class="form-textarea" name="notas" placeholder="Notas adicionales sobre el trabajo..." rows="4"></textarea>
+            </div>
+
+            <!-- Botones -->
+            <div class="modal-trabajo-footer">
+              <a href="./trabajos.html" class="btn-cancel">Cancelar</a>
+              <button type="submit" class="btn-submit">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M19 21H5a2 2 0 01-2-2V5a2 2 0 012-2h11l5 5v11a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2"/>
+                  <path d="M17 21v-8H7v8M7 3v5h8" stroke="currentColor" stroke-width="2"/>
+                </svg>
+                Guardar Trabajo
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <script>
+    // Toggle máquinas
+    const maquinaBtns = document.querySelectorAll('.maquina-btn');
+    const maquinasInput = document.getElementById('maquinasSelected');
+    let maquinasSeleccionadas = [];
+
+    maquinaBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        btn.classList.toggle('is-selected');
+        const maquina = btn.dataset.maquina;
+        
+        if (btn.classList.contains('is-selected')) {
+          maquinasSeleccionadas.push(maquina);
+        } else {
+          maquinasSeleccionadas = maquinasSeleccionadas.filter(m => m !== maquina);
+        }
+        
+        maquinasInput.value = maquinasSeleccionadas.join(',');
+      });
+    });
+
+    // Submit form
+    const form = document.getElementById('formNuevoTrabajo');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      
+      if (maquinasSeleccionadas.length === 0) {
+        alert('Debes seleccionar al menos una máquina');
+        return;
+      }
+      
+      const formData = new FormData(form);
+      const trabajo = Object.fromEntries(formData);
+      
+      console.log('Trabajo a guardar:', trabajo);
+      
+      // Aquí iría la lógica para guardar en el backend
+      // Por ahora redirigimos a trabajos
+      alert('Trabajo guardado correctamente');
+      window.location.href = './trabajos.html';
+    });
+
+    // Establecer fecha de ingreso por defecto (hoy)
+    const fechaIngreso = document.querySelector('input[name="fechaIngreso"]');
+    const today = new Date().toISOString().split('T')[0];
+    fechaIngreso.value = today;
+  </script>
+</body>
+</html>

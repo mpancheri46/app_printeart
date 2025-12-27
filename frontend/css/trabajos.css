@@ -1,0 +1,360 @@
+
+
+.trabajos-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 32px;
+}
+
+/* ===== Header ===== */
+
+.trabajos-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.title-main {
+  font-size: 32px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.trabajos-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.trabajos-btn-primary {
+  background: #fff;
+  border: none;
+  color: #000;
+  font-weight: 600;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity .2s;
+}
+
+.trabajos-btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* ===== Filters ===== */
+
+.trabajos-filters {
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.trabajos-filters-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 12px;
+}
+
+.trabajos-label {
+  display: none;
+}
+
+.trabajos-input,
+.trabajos-select select {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: rgba(255,255,255,0.7) !important;
+  border-radius: 8px !important;
+  padding: 11px 14px !important;
+  padding-left: 40px !important;
+  font-size: 14px !important;
+  height: 44px !important;
+}
+
+.trabajos-select select {
+  padding-left: 14px !important;
+}
+
+.trabajos-input::placeholder {
+  color: rgba(255,255,255,0.4);
+}
+
+.trabajos-input:focus,
+.trabajos-select select:focus {
+  border-color: rgba(255,255,255,0.2) !important;
+  outline: none;
+  box-shadow: none !important;
+}
+
+.control.has-icons-left .icon {
+  color: rgba(255,255,255,0.4);
+  height: 44px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control.has-icons-left .icon.is-left {
+  left: 0;
+  top: 0;
+}
+
+/* ===== List ===== */
+
+.trabajos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ===== Trabajo Card ===== */
+
+.trabajo-item {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.02);
+  text-decoration: none;
+  color: inherit;
+  transition: all .2s ease;
+  position: relative;
+}
+
+.trabajo-item:hover {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.15);
+}
+
+.trabajo-item:hover * {
+  color: inherit !important;
+}
+
+/* ===== Left ===== */
+
+.trabajo-left {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Title */
+
+.trabajo-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.trabajo-icon {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255,255,255,0.6);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.trabajo-cliente {
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 0;
+}
+
+.trabajo-meta {
+  display: none;
+}
+
+/* Fields */
+
+.trabajo-fields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(120px, 180px));
+  gap: 24px;
+}
+
+.trabajo-field-label {
+  font-size: 11px;
+  letter-spacing: .8px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.trabajo-field-value {
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(255,255,255,0.9);
+}
+
+/* Tags */
+
+.trabajo-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.trabajo-tag {
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Estados */
+
+.tag-prod {
+  background: rgba(59,130,246,0.15);
+  color: #3b82f6;
+}
+
+.tag-wait {
+  background: rgba(245,158,11,0.15);
+  color: #f59e0b;
+}
+
+.tag-pending {
+  background: rgba(107,114,128,0.15);
+  color: #9ca3af;
+}
+
+/* Prioridad */
+
+.tag-urgent {
+  background: rgba(239,68,68,0.15);
+  color: #ef4444;
+}
+
+.tag-normal {
+  background: rgba(107,114,128,0.15);
+  color: #9ca3af;
+}
+
+/* ===== Right ===== */
+
+.trabajo-right {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: flex-start;
+  min-width: 140px;
+}
+
+.trabajo-entrega-label {
+  font-size: 11px;
+  letter-spacing: .8px;
+  color: rgba(255,255,255,0.4);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.trabajo-entrega-date {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.trabajo-entrega-day {
+  font-size: 13px;
+  color: rgba(255,255,255,0.5);
+  font-weight: 400;
+}
+
+/* ===== Chevron ===== */
+
+.trabajo-chevron {
+  display: none;
+}
+
+/* ===== Footnote ===== */
+
+.trabajos-footnote {
+  display: none;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 1200px) {
+  .trabajo-fields {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 760px) {
+  .trabajos-filters-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .trabajo-item {
+    grid-template-columns: 1fr;
+  }
+
+  .trabajo-right {
+    text-align: left;
+  }
+  
+  .trabajo-fields {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+.trabajo-item,
+.trabajo-item * {
+  color: inherit;
+}
+
+.trabajo-item:hover,
+.trabajo-item:hover * {
+  color: inherit !important;
+  text-decoration: none;
+}
+
+
+.trabajos-select select {
+  color-scheme: dark;              /* clave para que el browser renderice bien */
+  background-color: rgba(255,255,255,0.05) !important;
+  color: rgba(255,255,255,0.85) !important;
+}
+
+.trabajos-select select option,
+.trabajos-select select optgroup {
+  background: #ffffff !important;
+  color: #111827 !important;       /* texto oscuro */
+}
+
+.trabajos-select select:hover {
+  border-color: rgba(255,255,255,0.18) !important;
+}
+
+.trabajos-select select:focus {
+  border-color: rgba(255,255,255,0.22) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+
+.trabajo-item:hover {
+  background: rgba(255,255,255,0.02);     /* casi igual al normal */
+  border-color: rgba(255,255,255,0.22);   /* se marca el borde */
+}
+
+
+.trabajo-item:hover,
+.trabajo-item:hover * {
+  color: inherit !important;
+}

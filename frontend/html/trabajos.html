@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printeart • Trabajos</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+  <link rel="stylesheet" href="../css/styles.css" />
+  <link rel="stylesheet" href="../css/trabajos.css" />
+</head>
+
+<body>
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div>
+        <div class="brand-title">Printeart</div>
+        <div class="brand-sub">v1.0.0</div>
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item" href="./index.html">Inicio</a>
+        <a class="menu-item is-active" href="./trabajos.html">Trabajos</a>
+        <a class="menu-item" href="./materiales.html">Materiales</a>
+        <a class="menu-item" href="./historial.html">Historial</a>
+        <a class="menu-item" href="./usuarios.html">Usuarios</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="userbox">
+          <div class="user-name">Administrador</div>
+          <div class="user-role">Admin</div>
+        </div>
+
+        <button class="button is-fullwidth btn-logout">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main trabajos-page">
+
+      <!-- Header -->
+      <div class="trabajos-header">
+        <div>
+          <h1 class="title-main">Trabajos</h1>
+          <p class="subtitle-main">Listado y seguimiento de producción</p>
+        </div>
+
+        <div class="trabajos-actions">
+          <button class="button trabajos-btn-primary" type="button">
+            + Nuevo trabajo
+          </button>
+        </div>
+      </div>
+
+      <!-- Filters (ClickUp-ish) -->
+      <section class="trabajos-filters cardish">
+        <div class="trabajos-filters-grid">
+          <div class="trabajos-filter">
+            <label class="trabajos-label" for="q">Buscar</label>
+            <div class="control has-icons-left">
+              <input
+                id="q"
+                class="input trabajos-input"
+                type="text"
+                placeholder="Buscar por cliente o tipo…"
+                autocomplete="off"
+              />
+              <span class="icon is-left" aria-hidden="true">
+                <!-- lupa -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                  <path d="M21 21l-4.3-4.3m1.8-5.2a7 7 0 11-14 0 7 7 0 0114 0z"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+              </span>
+            </div>
+          </div>
+
+          <div class="trabajos-filter">
+            <label class="trabajos-label" for="estado">Estado</label>
+            <div class="select is-fullwidth trabajos-select">
+              <select id="estado">
+                <option value="all">Todos los estados</option>
+                <option value="pendiente">Pendiente</option>
+                <option value="produccion">En producción</option>
+                <option value="espera">Esperando material</option>
+                <option value="listo">Listo</option>
+                <option value="entregado">Entregado</option>
+                <option value="atrasado">Atrasado</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- List -->
+      <section class="trabajos-list">
+
+        <!-- Item 1 -->
+        <a class="trabajo-item" href="./trabajo-detalle.html?id=T-001" aria-label="Abrir trabajo T-001">
+          <div class="trabajo-left">
+            <div class="trabajo-title">
+              <span class="trabajo-icon" aria-hidden="true">
+                <!-- cubo -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"
+                        stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M12 2v20" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                  <path d="M4 6.5l8 4.5 8-4.5" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                </svg>
+              </span>
+              <div>
+                <div class="trabajo-cliente">Restaurante El Buen Sabor</div>
+                <div class="trabajo-meta">ID: T-001 • Responsable: Marcos • Máquina: Xerox C70</div>
+              </div>
+            </div>
+
+            <div class="trabajo-fields">
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">TIPO</div>
+                <div class="trabajo-field-value">Impresión Digital</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">MATERIAL</div>
+                <div class="trabajo-field-value">Papel</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">CANTIDAD</div>
+                <div class="trabajo-field-value">500</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">DIMENSIONES</div>
+                <div class="trabajo-field-value">30×40 cm</div>
+              </div>
+            </div>
+
+            <div class="trabajo-tags">
+              <span class="tag trabajo-tag tag-prod">En Producción</span>
+              <span class="tag trabajo-tag tag-urgent">Urgente</span>
+            </div>
+          </div>
+
+          <div class="trabajo-right">
+            <div class="trabajo-entrega-label">ENTREGA</div>
+            <div class="trabajo-entrega-date">27/12/2025</div>
+            <div class="trabajo-entrega-day">sábado</div>
+          </div>
+
+          <span class="trabajo-chevron" aria-hidden="true">
+            <!-- chevron -->
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Item 2 -->
+        <a class="trabajo-item" href="./trabajo-detalle.html?id=T-002" aria-label="Abrir trabajo T-002">
+          <div class="trabajo-left">
+            <div class="trabajo-title">
+              <span class="trabajo-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"
+                        stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M12 2v20" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                  <path d="M4 6.5l8 4.5 8-4.5" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                </svg>
+              </span>
+              <div>
+                <div class="trabajo-cliente">Tienda de Ropa Fashion</div>
+                <div class="trabajo-meta">ID: T-002 • Responsable: Mili • Máquina: Roland SG-540</div>
+              </div>
+            </div>
+
+            <div class="trabajo-fields">
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">TIPO</div>
+                <div class="trabajo-field-value">Vinilo</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">MATERIAL</div>
+                <div class="trabajo-field-value">Vinilo</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">CANTIDAD</div>
+                <div class="trabajo-field-value">1</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">DIMENSIONES</div>
+                <div class="trabajo-field-value">1.5×0.8 m</div>
+              </div>
+            </div>
+
+            <div class="trabajo-tags">
+              <span class="tag trabajo-tag tag-wait">Esperando Material</span>
+            </div>
+          </div>
+
+          <div class="trabajo-right">
+            <div class="trabajo-entrega-label">ENTREGA</div>
+            <div class="trabajo-entrega-date">26/12/2025</div>
+            <div class="trabajo-entrega-day">viernes</div>
+          </div>
+
+          <span class="trabajo-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+        <!-- Item 3 -->
+        <a class="trabajo-item" href="./trabajo-detalle.html?id=T-003" aria-label="Abrir trabajo T-003">
+          <div class="trabajo-left">
+            <div class="trabajo-title">
+              <span class="trabajo-icon" aria-hidden="true">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                  <path d="M12 2l8 4.5v11L12 22l-8-4.5v-11L12 2z"
+                        stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                  <path d="M12 2v20" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                  <path d="M4 6.5l8 4.5 8-4.5" stroke="currentColor" stroke-width="2" opacity=".25"/>
+                </svg>
+              </span>
+              <div>
+                <div class="trabajo-cliente">Constructora del Sur</div>
+                <div class="trabajo-meta">ID: T-003 • Responsable: Juli • Máquina: Láser 50×70</div>
+              </div>
+            </div>
+
+            <div class="trabajo-fields">
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">TIPO</div>
+                <div class="trabajo-field-value">Impresión + Corte</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">MATERIAL</div>
+                <div class="trabajo-field-value">Lona</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">CANTIDAD</div>
+                <div class="trabajo-field-value">2</div>
+              </div>
+              <div class="trabajo-field">
+                <div class="trabajo-field-label">DIMENSIONES</div>
+                <div class="trabajo-field-value">3×2 m</div>
+              </div>
+            </div>
+
+            <div class="trabajo-tags">
+              <span class="tag trabajo-tag tag-pending">Pendiente</span>
+              <span class="tag trabajo-tag tag-normal">Normal</span>
+            </div>
+          </div>
+
+          <div class="trabajo-right">
+            <div class="trabajo-entrega-label">ENTREGA</div>
+            <div class="trabajo-entrega-date">29/12/2025</div>
+            <div class="trabajo-entrega-day">lunes</div>
+          </div>
+
+          <span class="trabajo-chevron" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+              <path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </span>
+        </a>
+
+      </section>
+
+      <div class="trabajos-footnote">
+        Tip: cada tarjeta es un link al detalle del trabajo (después lo hacemos modal o página “trabajo-detalle” con edición).
+      </div>
+
+    </main>
+  </div>
+</body>
+</html>

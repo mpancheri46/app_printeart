@@ -1,11 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Printeart OS</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
+
 <body>
-    
+  <div class="app">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="brand-title">Printeart</div>
+      </div>
+
+      <nav class="menu">
+        <a class="menu-item is-active" href="#">Inicio</a>
+        <a class="menu-item" href="./trabajos.html">Trabajos</a>
+        <a class="menu-item" href="./materiales.html">Materiales</a>
+        <a class="menu-item" href="./historial.html">Historial</a>
+        <a class="menu-item" href="./usuarios.html">Usuarios</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="userbox">
+          <div class="user-name">Administrador</div>
+          <div class="user-role">Admin</div>
+        </div>
+        <button class="button is-dark is-fullwidth btn-logout">Cerrar sesión</button>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+      <header class="main-header">
+        <div>
+          <h1 class="title-main">Inicio</h1>
+          <p class="subtitle-main">sábado, 27 de diciembre de 2025</p>
+        </div>
+      </header>
+
+      <!-- ALERTAS -->
+      <section class="alerts">
+        <div class="alert alert-danger">
+          <span class="dot dot-danger"></span>
+          <strong>2</strong> trabajos atrasados
+        </div>
+
+        <div class="alert alert-warn">
+          <span class="dot dot-warn"></span>
+          <strong>1</strong> materiales con stock bajo
+        </div>
+      </section>
+
+      <!-- KPIS -->
+      <section class="kpis">
+        <div class="cardish">
+          <div class="cardish-top">
+            <div class="cardish-title">TRABAJOS HOY</div>
+          </div>
+          <div class="cardish-value">1</div>
+        </div>
+
+        <div class="cardish">
+          <div class="cardish-top">
+            <div class="cardish-title">ATRASADOS</div>
+          </div>
+          <div class="cardish-value danger">2</div>
+        </div>
+
+        <div class="cardish">
+          <div class="cardish-top">
+            <div class="cardish-title">URGENTES</div>
+          </div>
+          <div class="cardish-value warn">2</div>
+        </div>
+      </section>
+
+      <!-- ESTADO MÁQUINAS -->
+      <section class="section-block">
+        <div class="section-head">
+          <h2 class="section-title">Estado de Máquinas</h2>
+          <a class="link-accent" href="#">Ver todas</a>
+        </div>
+
+        <div class="grid">
+          <div class="machine">
+            <div class="machine-name">Xerox C70</div>
+            <div class="machine-desc">Impresión Digital</div>
+            <span class="tag status ok">Disponible</span>
+          </div>
+
+          <div class="machine">
+            <div class="machine-name">Roland SG-540</div>
+            <div class="machine-desc">Impresión + Corte</div>
+            <span class="tag status ok">Disponible</span>
+          </div>
+
+          <div class="machine">
+            <div class="machine-name">Cortadora Roland</div>
+            <div class="machine-desc">Corte</div>
+            <span class="tag status ok">Disponible</span>
+          </div>
+
+          <div class="machine">
+            <div class="machine-name">Máquina Láser</div>
+            <div class="machine-desc">Corte y Grabado (50x70, hasta 3cm)</div>
+            <span class="tag status warn">En uso</span>
+          </div>
+
+          <div class="machine">
+            <div class="machine-name">Prensa Térmica</div>
+            <div class="machine-desc">Textil</div>
+            <span class="tag status ok">Disponible</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRÓXIMOS TRABAJOS (mock rápido) -->
+      <section class="section-block">
+        <div class="section-head">
+          <h2 class="section-title">Próximos trabajos</h2>
+          <a class="link-accent" href="#">Ver todos</a>
+        </div>
+
+        <div class="cardish tablelike">
+          <div class="row head">
+            <div>Cliente</div>
+            <div>Trabajo</div>
+            <div>Entrega</div>
+            <div>Estado</div>
+          </div>
+
+          <div class="row">
+            <div>Cliente X</div>
+            <div>Stickers troquelados</div>
+            <div>28/12</div>
+            <div><span class="pill warn">Urgente</span></div>
+          </div>
+
+          <div class="row">
+            <div>Cliente Y</div>
+            <div>Lona 1.33m</div>
+            <div>30/12</div>
+            <div><span class="pill ok">En curso</span></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 </body>
 </html>
